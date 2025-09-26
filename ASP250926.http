@@ -1,0 +1,24 @@
+@ASP250926_HostAddress = https://localhost:7048
+
+POST {{ASP250926_HostAddress}}/api/todoitems
+Content-Type: application/json
+{
+  "name": "házit megcsinálni",
+  "isComplete": false
+}
+
+###
+
+POST {{ASP250926_HostAddress}}/api/todoitems
+Content-Type: application/json
+
+{
+  "name": "kacsák elõtt legyen víz",
+  "isComplete": true
+}
+
+###
+
+GET {{ASP250926_HostAddress}}/api/todoitems
+
+###
