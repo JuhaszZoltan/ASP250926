@@ -9,6 +9,14 @@ builder.Services.AddOpenApi();
 builder.Services.AddDbContext<TodoContext>(
     opt => opt.UseInMemoryDatabase("TodoList"));
 
+builder.Services.AddCors(
+    options => options.AddDefaultPolicy(
+        builder => builder
+        .AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod()));
+
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -23,6 +31,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 
