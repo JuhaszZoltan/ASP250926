@@ -4,9 +4,9 @@ let todos = [];
 
 function getItems() {
     fetch(uri)
-        .then(response => response.json())
-        .then(data => _displayItems(data))
-        .catch(error => console.error('Nem lehet lekerdezni :(((((', error));
+    .then(response => response.json())
+    .then(data => _displayItems(data))
+    .catch(error => console.error('Nem lehet lekerdezni :(((', error));
 }
 
 function addItem() {
@@ -25,20 +25,20 @@ function addItem() {
         },
         body: JSON.stringify(item)
     })
-        .then(response => response.json())
-        .then(() => {
-            getItems();
-            addNameTextbox.value = '';
-        })
-        .catch(error => console.error('Nem lehet hozzáadni :(((((', error));
+    .then(response => response.json())
+    .then(() => {
+        getItems();
+        addNameTextbox.value = '';
+    })
+        .catch(error => console.error('Nem lehet hozzáadni :(((', error));
 }
 
 function deleteItem(id) {
     fetch(`${uri}/${id}`, {
         method: 'DELETE'
     })
-        .then(() => getItems())
-        .catch(error => console.error('Nem lehet törölni :((((', error));
+    .then(() => getItems())
+    .catch(error => console.error('Nem lehet törölni :(((', error));
 }
 
 function displayEditForm(id) {
@@ -66,8 +66,8 @@ function updateItem() {
         },
         body: JSON.stringify(item)
     })
-        .then(() => getItems())
-        .catch(error => console.error('nem lehet frissíteni :((((', error));
+    .then(() => getItems())
+    .catch(error => console.error('nem lehet módosítani :(((', error));
 
     closeInput();
 
