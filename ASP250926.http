@@ -22,3 +22,17 @@ Content-Type: application/json
 GET {{ASP250926_HostAddress}}/api/todoitems
 
 ###
+
+@id=111
+GET {{ASP250926_HostAddress}}/api/todoitems/{{id}}
+
+###
+
+POST {{ASP250926_HostAddress}}/api/todoitems
+Content-Type: application/json
+
+{
+  //TodoItem
+}
+
+###
